@@ -7,14 +7,20 @@ import {connect} from 'react-redux';
     constructor(props){
         super(props);
         console.log(props); 
+        // this.toggleToDo = this.toggleToDo.bind(this,i);
     }
+
+    // toggleToDo(i,e){
+    //     console.log(e.currentTarget);
+    //     console.log(i);
+    // }
 
     render(){
         return(
             <div>
                 {this.props.todo_list.todos.map((todo)=>{
-                    return <p key={todo.id}>{todo.text}</p>;
-                })}
+                    return <p onClick={()=>this.props.dispatch(console.log(todo.id))} key={todo.id}>{todo.text}</p>;
+                })} 
             </div>
         );
     }

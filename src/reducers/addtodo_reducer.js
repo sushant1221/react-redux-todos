@@ -8,16 +8,17 @@ import * as types from '../actions/actionTypes';
 
 export default function addToDoReducer(state={
     todos: []
-},actions){
-    switch(actions.type){
+},action){
+    switch(action.type){
         case types.ADD_TODO :
+        console.log(...state.todos);
             return Object.assign({}, state, {
                 todos: [
                 ...state.todos,
                     {
-                        text: actions.message,
+                        text: action.message,
                         completed: false,
-                        id:actions.id
+                        id:action.id
                     }
                 ]
             })
